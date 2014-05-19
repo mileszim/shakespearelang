@@ -1,4 +1,3 @@
-shakespearelang
-===============
+# shakespearelang 
 
-Repository for the shakespearelang.org website.
+> Shakespeare Programming Language Docs
