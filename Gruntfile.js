@@ -11,11 +11,6 @@
 module.exports = function(grunt) {
 'use strict';
 
-  // Delete after first run
-  if(!grunt.file.exists('vendor/bootstrap')) {
-    grunt.fail.fatal('>> Please run "bower install" before continuing.');
-  }
-
   // Project configuration.
   grunt.initConfig({
 
@@ -128,7 +123,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-readme');
+  //grunt.loadNpmTasks('grunt-readme');
   grunt.loadNpmTasks('grunt-sync-pkg');
   grunt.loadNpmTasks('assemble-less');
   grunt.loadNpmTasks('assemble');
@@ -140,13 +135,13 @@ module.exports = function(grunt) {
   // or install Bootstrap to the "vendor" directory before running this command.
   grunt.registerTask('design', ['clean', 'assemble', 'less:site', 'watch:site']);
 
-  grunt.registerTask('docs', ['readme', 'sync']);
+  //grunt.registerTask('docs', ['readme', 'sync']);
 
   // Delete this conditional logic after first run.
   if(!grunt.file.exists('_gh_pages_/assets/fonts') && !grunt.file.exists('_gh_pages_/assets/js')) {
-    grunt.registerTask('default', ['setup', 'clean', 'jshint', 'copy:assets', 'assemble', 'less', 'docs']);
+    grunt.registerTask('default', ['setup', 'clean', 'jshint', 'copy:assets', 'assemble', 'less']);
   } else {
     // Use this going forward.
-    grunt.registerTask('default', ['clean', 'jshint', 'copy:assets', 'assemble', 'less', 'docs']);
+    grunt.registerTask('default', ['clean', 'jshint', 'copy:assets', 'assemble', 'less']);
   }
 };
