@@ -86,23 +86,15 @@ module.exports = function(grunt) {
 
     // Copy Bootstrap's assets to site assets
     copy: {
-      // Delete this target after first run!!! Afterwards you'll need to
-      // decide on a strategy for adding javascripts, fonts etc.
-      once: {
-        files: [
-          {expand: true, cwd: '<%= bootstrap %>/less', src: ['*', '!{var*,mix*,util*}'], dest: '<%= site.theme %>/bootstrap/'},
-          {expand: true, cwd: '<%= bootstrap %>/less', src: ['{util*,mix*}.less'], dest: '<%= site.theme %>/utils'},
-          {expand: true, cwd: '<%= bootstrap %>/less', src: ['variables.less'], dest: '<%= site.theme %>/'},
-          {expand: true, cwd: 'node_modules/showup', src: ['showup.js'], dest: '<%= site.assets %>/js/'},
-          {expand: true, cwd: 'node_modules/showup', src: ['showup.css'], dest: '<%= site.theme %>/components/', ext: '.less'},
-        ]
-      },
-      // Keep this target as a getting started point
       assets: {
         files: [
           {expand: true, cwd: '<%= bootstrap %>/dist/fonts', src: ['*.*'], dest: '<%= site.assets %>/fonts/'},
           {expand: true, cwd: '<%= bootstrap %>/dist/js',    src: ['*.*'], dest: '<%= site.assets %>/js/'},
         ]
+      },
+      cname: {
+        src: './CNAME',
+        dest: './_gh_pages/CNAME'
       }
     },
 
@@ -137,11 +129,5 @@ module.exports = function(grunt) {
 
   //grunt.registerTask('docs', ['readme', 'sync']);
 
-  // Delete this conditional logic after first run.
-  if(!grunt.file.exists('_gh_pages_/assets/fonts') && !grunt.file.exists('_gh_pages_/assets/js')) {
-    grunt.registerTask('default', ['setup', 'clean', 'jshint', 'copy:assets', 'assemble', 'less']);
-  } else {
-    // Use this going forward.
-    grunt.registerTask('default', ['clean', 'jshint', 'copy:assets', 'assemble', 'less']);
-  }
+  grunt.registerTask('default', ['clean', 'jshint', 'copy:assets', 'copy:cname', 'assemble', 'less']);
 };
