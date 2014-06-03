@@ -2,11 +2,21 @@
 title: Home
 ---
 
+<style>
+.right-column {
+  margin-top: 55px
+}
+</style>
+
 <div class="row">
-  <div class="col-lg-12">
-    <h1>Middleman is Watching</h1>
-    <p class="doc">
-      <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-    </p><!-- .doc -->
+  <div class="col-lg-6">
+    <h3>Example: Hello</h3>
+    <div id="editor"><%= partial "programs/hello" %></div>
+  </div>
+  <div class="col-lg-6 right-column">
+    <div id="console"></div>
+    
+    <br/>
+    <button class="btn btn-primary" id="run_program">> Run</button>
   </div>
 </div>
