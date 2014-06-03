@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <%= partial :head %>
+
+  <body>
+    <%= partial :nav %>
+
+    <div class="container">
+      <%= yield %>
+
+      <hr>
+      <%= partial :footer %>
+    </div>
+
+    <%= partial :javascripts %>
+  </body>
+</html>
