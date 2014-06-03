@@ -5,6 +5,10 @@ body {
   padding-bottom: 20px;
 }
 
+.right-column {
+  margin-top: 55px
+}
+
 #editor { 
   height: 450px;
 }
