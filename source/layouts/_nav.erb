@@ -11,10 +11,6 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <% if current_page.path=="index.html" %><li class="active"><% else %><li><% end %>
-          <a href="/">Home</a>
-        </li>
-        
         <% if current_page.path=="about.html" %><li class="active"><% else %><li><% end %>
           <a href="about.html">About</a>
         </li>
@@ -22,16 +18,29 @@
         <% if current_page.path.include? "docs" %><li class="active"><% else %><li><% end %>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="/docs/api.html">API Reference</a></li>
-            <li><a href="/docs/wordlists.html">Word Lists</a></li>
-            <li><a href="/docs/examples.html">Examples</a></li>
+            <% if current_page.path.include? "api" %><li class="active"><% else %><li><% end %>
+              <a href="/docs/api.html">API Reference</a>
+            </li>
+            <% if current_page.path.include? "wordlists" %><li class="active"><% else %><li><% end %>
+              <a href="/docs/wordlists.html">Word Lists</a>
+            </li>
+            <% if current_page.path.include? "examples" %><li class="active"><% else %><li><% end %>
+              <a href="/docs/examples.html">Examples</a>
+            </li>
             <li class="divider"></li>
-            <li><a href="/docs/specification.html">Specification</a></li>
+            <% if current_page.path.include? "specification" %><li class="active"><% else %><li><% end %>
+              <a href="/docs/specification.html">Specification</a>
+            </li>
           </ul>
         </li>
         
-        <% if current_page.path=="implementations.html" %><li class="active"><% else %><li><% end %>
-          <a href="implementations.html">Implementations</a>
+        <% if current_page.path.include? "resources" %><li class="active"><% else %><li><% end %>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <% if current_page.path.include? "implementations" %><li class="active"><% else %><li><% end %>
+              <a href="/resources/implementations.html">Implementations</a>
+            </li>
+          </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav pull-right">
