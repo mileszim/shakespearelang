@@ -41,11 +41,14 @@
 # end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+
+helpers do
+  def embedded_doc(pdf_uri)
+    "http://docs.google.com/gview?url=" + pdf_uri + "&embedded=true"
+  end
+end
+
+
 
 set :css_dir, 'assets/css'
 
