@@ -1,18 +1,18 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <%= partial :head %>
+  <%= partial "layouts/head" %>
 
   <body>
-    <%= partial :nav %>
+    <%= partial "layouts/nav" %>
 
     <div class="container">
       <%= yield %>
 
       <hr>
-      <%= partial :footer %>
+      <%= partial "layouts/footer" %>
     </div>
 
-    <%= partial :javascripts %>
+    <%= partial "layouts/javascripts" %>
   </body>
 </html>
