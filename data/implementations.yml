@@ -33,7 +33,7 @@
     site: https://github.com/daherb
   site: https://github.com/daherb/shakespeare
   
- - name: Bard
+- name: Bard
   lang: Java / Antlr4
   author:
     name: Alejandro Dobniewski
