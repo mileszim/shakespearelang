@@ -1,0 +1,30 @@
+---
+layout: page
+title: Implementations
+---
+
+<div class="row">
+  <div class="col-lg-7">
+    
+    <p>SPL is implemented in the following list of projects:</p>
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Author(s)</th>
+          <th>Language</th>
+        </tr>
+      </thead>
+      {% for i in site.data.implementations %}
+        <tr>
+          <td><a href="{{ i.site }}">{{ i.name }}</a></td>
+          <td><a href="{{ i.author.site }}">{{ i.author.name }}</a></td>
+          <td>{{ i.lang }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    
+    <p>Want to be listed here? <a href="https://github.com/mileszim/shakespearelang">Submit a pull request.</a></p>
+  </div>
+</div>
