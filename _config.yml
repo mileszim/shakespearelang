@@ -12,7 +12,7 @@ copyright:
   text: Miles Zimmerman
   link: http://maztek.io/
   year: 2014
-
+    
 # Build settings
 markdown:    kramdown
 highlighter: pygments
