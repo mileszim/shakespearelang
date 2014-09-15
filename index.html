@@ -2,22 +2,15 @@
 layout: default
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<div class="row">
+  <div class="col-lg-6">
+    <h3>Example: Hello</h3>
+    <div id="editor"><%= partial "programs/hello" %></div>
+  </div>
+  <div class="col-lg-6 right-column">
+    <div id="console"></div>
+    
+    <br/>
+    <button class="btn btn-primary" id="run_program">> Run</button>
+  </div>
 </div>

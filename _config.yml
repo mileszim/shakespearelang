@@ -1,6 +1,7 @@
 # Meta
 title: Shakespeare Programming Language
 description: Where the empty vessel makes the loudest sound.
+author: Miles Zimmerman
 
 # URLs
 baseurl: ""
@@ -10,6 +11,7 @@ url: "http://shakespearelang.org"
 copyright:
   text: Miles Zimmerman
   link: http://maztek.io/
+  year: 2014
 
 # Build settings
 markdown:    kramdown
